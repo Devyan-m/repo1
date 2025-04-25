@@ -1,8 +1,47 @@
 <!DOCTYPE html>
-<html>
-<head><title>Node App</title></head>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Node.js Frontend</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 40px;
+      text-align: center;
+    }
+    button {
+      margin: 10px;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    #response {
+      margin-top: 20px;
+      font-weight: bold;
+      font-size: 20px;
+      color: #333;
+    }
+  </style>
+</head>
 <body>
   <h1>Hello from Node.js Frontend!</h1>
+  <p>Do you like this app?</p>
+  <button onclick="respond('yes')">Yes</button>
+  <button onclick="respond('no')">No</button>
+
+  <div id="response"></div>
+
+  <script>
+    function respond(answer) {
+      const responseBox = document.getElementById("response");
+      if (answer === "yes") {
+        responseBox.innerText = "✅ Thank you!";
+      } else {
+        responseBox.innerText = "😢 Sorry to hear that!";
+      }
+    }
+  </script>
 </body>
 </html>
+
 
