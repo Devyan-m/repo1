@@ -43,7 +43,8 @@ pipeline {
          stage('Deploy using deploy.sh') {
             steps {
                 echo "⚙️ Running external deploy script..."
-                sh './deploy.sh'  // Assuming deploy.sh is in the root of your repository
+                sh 'chmod +x jenkins/deploy.sh'
+                sh './jenkins/deploy.sh'  // Assuming deploy.sh is in the root of your repository
             }
         }
 
