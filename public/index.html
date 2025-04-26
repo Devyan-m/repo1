@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Well come to the Nature</title>
+    <title>Save The Nature</title>
     <style>
         body {
             text-align: center;
@@ -15,6 +15,16 @@
             width: 300px;
             height: auto;
         }
+        #thankyou {
+            display: none;
+            margin-top: 20px;
+        }
+        #sorry {
+            display: none;
+            margin-top: 20px;
+            color: red;
+            font-weight: bold;
+        }
     </style>
 </head>
 <body>
@@ -22,21 +32,27 @@
     <h1>Hello from Node.js Frontend!</h1>
     <p>Do you like nature?</p>
     <button onclick="showImage()">Yes</button>
-    <button onclick="noAction()">No</button>
+    <button onclick="showSorry()">No</button>
 
-    <div id="thankyou" style="display:none; margin-top: 20px;">
+    <div id="thankyou">
         <p style="color: green; font-weight: bold;">✅ Thank you!</p>
-        <img id="natureImage" src="/home/ec2-user/my-node-app/repo1/src/nature.jpg" alt="Nature" />
+        <img id="natureImage" src="/home/ec2-user/my-node-app/repo1/src/nature.png" alt="Nature" />
+    </div>
+
+    <div id="sorry">
+        <p>❌ No problem! Thank you for visiting!</p>
     </div>
 
     <script>
         function showImage() {
             document.getElementById('thankyou').style.display = 'block';
             document.getElementById('natureImage').style.display = 'inline';
+            document.getElementById('sorry').style.display = 'none'; // hide sorry message if shown
         }
 
-        function noAction() {
-            alert("Okay! Thank you for visiting!");
+        function showSorry() {
+            document.getElementById('sorry').style.display = 'block';
+            document.getElementById('thankyou').style.display = 'none'; // hide thankyou message if shown
         }
     </script>
 
