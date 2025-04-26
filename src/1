@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Node.js Frontend</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            margin-top: 50px;
+        }
+        #natureImage {
+            display: none;
+            margin-top: 20px;
+            width: 300px;
+            height: auto;
+        }
+        #thankyou {
+            display: none;
+            margin-top: 20px;
+        }
+        #sorry {
+            display: none;
+            margin-top: 20px;
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Hello from Node.js Frontend!</h1>
+    <p>Do you like nature?</p>
+    <button onclick="showImage()">Yes</button>
+    <button onclick="showSorry()">No</button>
+
+    <div id="thankyou">
+        <p style="color: green; font-weight: bold;">✅ Thank you!</p>
+        <img id="natureImage" src="/images/nature.png" alt="Nature" />
+    </div>
+
+    <div id="sorry">
+        <p>❌ No problem! Thank you for visiting!</p>
+    </div>
+
+    <script>
+        function showImage() {
+            document.getElementById('thankyou').style.display = 'block';
+            document.getElementById('natureImage').style.display = 'inline';
+            document.getElementById('sorry').style.display = 'none'; // hide sorry message if shown
+        }
+
+        function showSorry() {
+            document.getElementById('sorry').style.display = 'block';
+            document.getElementById('thankyou').style.display = 'none'; // hide thankyou message if shown
+        }
+    </script>
+
+</body>
+</html>
+
