@@ -26,7 +26,8 @@ pipeline {
         stage('Docker Build') {
             steps {
                 echo "🐳 Building Docker image..."
-                sh "docker build -t ${DOCKER_IMAGE}:${DOCKER_TAG} ."
+                sh "docker build -t ${DOCKER_IMAG}:latest ."
+                sh "docker tag ${DOCKER_IMAG}:latest ${DOCKER_IMAG}/${DOCKER_TAG}
                 
                 echo "logging Docker image to registry..."
                 withCredentials([usernamePassword(
